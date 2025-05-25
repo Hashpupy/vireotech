@@ -1,6 +1,7 @@
 # Vireotech - Website Development Services
 
 > *"Modern Websites for Modern People"*
+> *"Smart, Sleek, Scalable"*
 
 ## 🌟 About Vireotech
 
