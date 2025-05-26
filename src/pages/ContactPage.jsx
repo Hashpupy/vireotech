@@ -12,7 +12,7 @@ export function ContactPage() {
             <p>Fill out the form or reach out directly:</p>
             <ul>
               <li>Email: info@vireotech.com</li>
-              <li>Phone: (123) 456-7890</li>
+              <li>Phone: (266) 5950 7232</li>
             </ul>
           </div>
           <ContactForm />
