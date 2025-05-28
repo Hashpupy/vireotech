@@ -1,22 +1,24 @@
+import { Award, Clock, Users, Target, Shield, Lightbulb } from 'lucide-react';
+
 export function AboutPage() {
-const values = [
+  const values = [
     {
-      icon: Shield,
+      icon: <Shield className="value-icon" />,
       title: "Professional Integrity",
       description: "I conduct all client interactions with honesty, transparency, and respect, delivering work that exceeds expectations."
     },
     {
-      icon: Clock,
+      icon: <Clock className="value-icon" />,
       title: "Commitment to Deadlines",
       description: "I honor all timelines and keep you informed throughout the process, ensuring your project launches on time."
     },
     {
-      icon: Lightbulb,
+      icon: <Lightbulb className="value-icon" />,
       title: "Fresh Perspective",
       description: "I bring modern web development practices and the latest technologies to create innovative solutions."
     },
     {
-      icon: Users,
+      icon: <Users className="value-icon" />,
       title: "Client-Focused Approach",
       description: "Your success is my priority. I work closely with you to understand and deliver exactly what you need."
     }
@@ -29,7 +31,7 @@ const values = [
     { number: "2024", label: "Graduate" }
   ];
 
-  const process = [
+  const processSteps = [
     {
       step: "01",
       title: "Discovery & Planning",
@@ -53,49 +55,46 @@ const values = [
   ];
 
   return (
-      <div className={styles.container}>
+    <div className="about-page" id="about">
+      <div className="container">
         {/* Hero Section */}
-        <div className={styles.heroGrid}>
-          <div>
-            <h2 className={styles.aboutTitle}>About Vireotech</h2>
-            <p className={styles.aboutDescription}>
-              Vireotech is a digital development service founded by a passionate recent graduate specializing in creating 
-              high-quality websites, web applications, and e-commerce solutions. Fresh from completing my degree, 
-              I'm eager to help businesses establish a strong digital presence with modern, innovative approaches.
+        <h1>About Vireotech</h1>
+        <div className="about-content">
+          <div className="about-text">
+            <p >
+              Vireotech is a digital development service specializing in creating modern, 
+              responsive websites for individuals, small businesses, and startups. As a 
+              recent graduate, I'm passionate about helping clients establish a strong online presence.
             </p>
-            <p className={styles.aboutDescription}>
-              I work with small businesses, startups, e-commerce brands, and local services to transform 
-              their ideas into powerful digital solutions. As a new graduate, I bring fresh energy, 
-              up-to-date knowledge of the latest technologies, and competitive pricing while building my reputation.
+            <p>
+              My mission is to deliver high-quality web solutions that combine fresh perspectives 
+              with proven techniques. I bring the latest knowledge from my studies along with 
+              hands-on project experience to every client engagement.
             </p>
-            <div className={styles.statsGrid}>
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className={styles.statNumber}>{stat.number}</div>
-                  <div className={styles.statLabel}>{stat.label}</div>
-                </div>
-              ))}
-            </div>
+            <p >
+              Using cutting-edge technologies like React, Next.js, and modern CSS frameworks, 
+              I build websites that are fast, accessible, and visually appealing. My goal is 
+              to provide exceptional value while building lasting relationships with clients.
+            </p>
           </div>
-          
-          <div className="relative">
-            <div className={styles.whyChooseCard}>
-              <h3 className={styles.whyChooseTitle}>Why Choose Vireotech?</h3>
-              <ul className={styles.whyChooseList}>
-                <li className={styles.whyChooseItem}>
-                  <Award className="w-5 h-5 mr-3 text-yellow-300" />
+          <div className="about-image">
+            <div className="why-choose-card">
+              <h3>Why Choose Vireotech?</h3>
+              <ul>
+                <li>
+                  <Award className="icon" />
                   Fresh graduate with modern skills
                 </li>
-                <li className={styles.whyChooseItem}>
-                  <Target className="w-5 h-5 mr-3 text-yellow-300" />
+                <li>
+                  <Target className="icon" />
                   Focused on your business goals
                 </li>
-                <li className={styles.whyChooseItem}>
-                  <Shield className="w-5 h-5 mr-3 text-yellow-300" />
+                <li>
+                  <Shield className="icon" />
                   Transparent & honest communication
                 </li>
-                <li className={styles.whyChooseItem}>
-                  <Clock className="w-5 h-5 mr-3 text-yellow-300" />
+                <li>
+                  <Clock className="icon" />
                   Quick turnaround times
                 </li>
               </ul>
@@ -103,119 +102,107 @@ const values = [
           </div>
         </div>
 
+        {/* Stats */}
+        <div className="stats-grid">
+          {stats.map((stat, index) => (
+            <div key={index} className="stat-item">
+              <div className="stat-number">{stat.number}</div>
+              <div className="stat-label">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+
         {/* Values Section */}
-        <div className="mb-20">
-          <div className={styles.sectionHeader}>
-            <h3 className={styles.sectionTitle}>My Core Values</h3>
-            <p className={styles.sectionSubtitle}>The principles that guide everything I do</p>
-          </div>
-          
-          <div className={styles.valuesGrid}>
-            {values.map((value, index) => {
-              const IconComponent = value.icon;
-              return (
-                <div key={index} className={styles.valueCard}>
-                  <div className={styles.valueIconContainer}>
-                    <IconComponent className="w-8 h-8 text-blue-600" />
-                  </div>
-                  <h4 className={styles.valueTitle}>{value.title}</h4>
-                  <p className={styles.valueDescription}>{value.description}</p>
+        <div className="section">
+          <h2>My Core Values</h2>
+          <p className="section-subtitle">The principles that guide everything I do</p>
+          <div className="values-grid">
+            {values.map((value, index) => (
+              <div key={index} className="value-card">
+                <div className="value-icon-container">
+                  {value.icon}
                 </div>
-              );
-            })}
+                <h3>{value.title}</h3>
+                <p>{value.description}</p>
+              </div>
+            ))}
           </div>
         </div>
 
         {/* Process Section */}
-        <div className="mb-20">
-          <div className={styles.sectionHeader}>
-            <h3 className={styles.sectionTitle}>My Development Process</h3>
-            <p className={styles.sectionSubtitle}>How I turn your ideas into reality</p>
-          </div>
-
-          <div className={styles.processGrid}>
-            {process.map((step, index) => (
-              <div key={index} className="relative">
-                <div className={styles.processCard}>
-                  <div className={styles.processStep}>{step.step}</div>
-                  <h4 className={styles.processTitle}>{step.title}</h4>
-                  <p className={styles.processDescription}>{step.description}</p>
-                </div>
-                
-                {index < process.length - 1 && (
-                  <div className={styles.processConnector}></div>
-                )}
+        <div className="section">
+          <h2>My Development Process</h2>
+          <p className="section-subtitle">How I turn your ideas into reality</p>
+          <div className="process-grid">
+            {processSteps.map((step, index) => (
+              <div key={index} className="process-card">
+                <div className="process-step">{step.step}</div>
+                <h3>{step.title}</h3>
+                <p>{step.description}</p>
               </div>
             ))}
           </div>
         </div>
 
         {/* Target Clients */}
-        <div className={styles.clientsContainer}>
-          <div className={styles.sectionHeader}>
-            <h3 className={styles.sectionTitle}>Who I Serve</h3>
-            <p className={styles.sectionSubtitle}>Specialized solutions for diverse business needs</p>
-          </div>
-
-          <div className={styles.clientsGrid}>
-            <div className={styles.clientCard}>
-              <div className={styles.clientEmoji}>🏢</div>
-              <h4 className={styles.clientTitle}>Small Businesses</h4>
-              <p className={styles.clientDescription}>Professional websites that establish credibility and attract customers</p>
+        <div className="section clients-section">
+          <h2>Who I Serve</h2>
+          <p className="section-subtitle">Specialized solutions for diverse business needs</p>
+          <div className="clients-grid">
+            <div className="client-card">
+              <div className="client-emoji">🏢</div>
+              <h3>Small Businesses</h3>
+              <p>Professional websites that establish credibility and attract customers</p>
             </div>
-            
-            <div className={styles.clientCard}>
-              <div className={styles.clientEmoji}>🚀</div>
-              <h4 className={styles.clientTitle}>Startups</h4>
-              <p className={styles.clientDescription}>Scalable web applications and MVP development for growing companies</p>
+            <div className="client-card">
+              <div className="client-emoji">🚀</div>
+              <h3>Startups</h3>
+              <p>Scalable web applications and MVP development for growing companies</p>
             </div>
-            
-            <div className={styles.clientCard}>
-              <div className={styles.clientEmoji}>🛒</div>
-              <h4 className={styles.clientTitle}>E-commerce Brands</h4>
-              <p className={styles.clientDescription}>Complete online stores with payment processing and inventory management</p>
+            <div className="client-card">
+              <div className="client-emoji">🛒</div>
+              <h3>E-commerce Brands</h3>
+              <p>Complete online stores with payment processing and inventory management</p>
             </div>
-            
-            <div className={styles.clientCard}>
-              <div className={styles.clientEmoji}>🏪</div>
-              <h4 className={styles.clientTitle}>Local Services</h4>
-              <p className={styles.clientDescription}>Custom solutions for restaurants, salons, and service-based businesses</p>
+            <div className="client-card">
+              <div className="client-emoji">🏪</div>
+              <h3>Local Services</h3>
+              <p>Custom solutions for restaurants, salons, and service-based businesses</p>
             </div>
           </div>
         </div>
 
-        {/* New Graduate Advantage */}
-        <div className={styles.graduateAdvantage}>
-          <div className={styles.sectionHeader}>
-            <h3 className={styles.sectionTitle}>The Fresh Graduate Advantage</h3>
-          </div>
-          <div className={styles.advantageGrid}>
-            <div className={styles.advantageCard}>
-              <div className={styles.advantageEmoji}>🎓</div>
-              <h4 className={styles.advantageTitle}>Latest Knowledge</h4>
-              <p className={styles.advantageDescription}>Fresh from academia with up-to-date knowledge of modern web technologies and industry standards</p>
+        {/* Graduate Advantage */}
+        <div className="section advantage-section">
+          <h2>The Fresh Graduate Advantage</h2>
+          <div className="advantage-grid">
+            <div className="advantage-card">
+              <div className="advantage-emoji">🎓</div>
+              <h3>Latest Knowledge</h3>
+              <p>Fresh from academia with up-to-date knowledge of modern web technologies</p>
             </div>
-            <div className={styles.advantageCard}>
-              <div className={styles.advantageEmoji}>💡</div>
-              <h4 className={styles.advantageTitle}>Innovation Focus</h4>
-              <p className={styles.advantageDescription}>Bringing creative solutions and fresh perspectives to your projects</p>
+            <div className="advantage-card">
+              <div className="advantage-emoji">💡</div>
+              <h3>Innovation Focus</h3>
+              <p>Bringing creative solutions and fresh perspectives to your projects</p>
             </div>
-            <div className={styles.advantageCard}>
-              <div className={styles.advantageEmoji}>💰</div>
-              <h4 className={styles.advantageTitle}>Competitive Rates</h4>
-              <p className={styles.advantageDescription}>Quality work at affordable prices as I build my professional reputation</p>
+            <div className="advantage-card">
+              <div className="advantage-emoji">💰</div>
+              <h3>Competitive Rates</h3>
+              <p>Quality work at affordable prices as I build my professional reputation</p>
             </div>
           </div>
         </div>
 
         {/* CTA */}
-        <div className={styles.ctaContainer}>
-          <h3 className={styles.ctaTitle}>Ready to Work Together?</h3>
-          <p className={styles.ctaDescription}>Let's discuss how I can help bring your digital vision to life</p>
-          <button className={styles.ctaButton}>
+        <div className="cta-section">
+          <h2>Ready to Work Together?</h2>
+          <p>Let's discuss how I can help bring your digital vision to life</p>
+          <button className="cta-button">
             Start Your Project
           </button>
         </div>
       </div>
+    </div>
   );
 }
