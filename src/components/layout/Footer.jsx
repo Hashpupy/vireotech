@@ -26,7 +26,7 @@ export function Footer() {
           </div>
           <div className="footer-contact">
             <h4>Contact Us</h4>
-            <p>Email: info@vireotech.com</p>
+            <p>Email: khoasehashatsi40@gmail.com</p>
             <div className="social-links">
               <a href="#" aria-label="Instagram">
                 📸

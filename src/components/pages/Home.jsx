@@ -1,4 +1,4 @@
-import { Hero, Services, CTA } from "../components";
+import { Hero, Services, CTA } from "../sections";
 
 export function Home() {
   return (

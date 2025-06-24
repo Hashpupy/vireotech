@@ -1,4 +1,4 @@
-import { ContactForm } from "../components";
+import { ContactForm } from "../sections";
 
 export function ContactPage() {
   return (

@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Header, Footer } from "./components";
-import { Home, PortfolioPage, AboutPage, ContactPage } from "./pages";
+import { Header, Footer } from "./components/layout";
+import { Home, PortfolioPage, AboutPage, ContactPage } from "./components/pages";
 
 export default function App() {
   return (
